@@ -1,7 +1,8 @@
-const store = {
-  items: [],
-  hideCheckedItems: false
-};
+/* eslint-disable no-unused-vars */
+import store from './store.js';
+import item from './item.js';
+/* eslint-disable no-undef */
+// 
 
 const generateItemElement = function (item) {
   let itemTitle = `<span class="shopping-item shopping-item__checked">${item.name}</span>`;
