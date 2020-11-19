@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
 import store from './store.js';
 import item from './item.js';
@@ -46,7 +47,16 @@ const render = function () {
 };
 
 const addItemToShoppingList = function (itemName) {
-  store.items.push({ id: cuid(), name: itemName, checked: false });
+  try {
+    item.validateName(itemName);
+    let newItem=item.create(itemName);
+    let result = store.items;
+    result.push(newItem);
+    render();
+  } catch (error){
+    console.log(`Cannot add item: ${error.message}`);
+  }
+  
 };
 
 const handleNewItemSubmit = function () {
