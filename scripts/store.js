@@ -7,11 +7,11 @@ let items = [];
 let hideCheckedItems = false;
 
 
-let findById = (id) => {
+function findById (id) {
   let list = this.items;
   let found = list.find(item => id === item.id);
   return found;
-};
+}
 
 let addItem = function(name){
   try {
@@ -23,7 +23,7 @@ let addItem = function(name){
   }
 };
 
-let findAndToggleChecked = (id) => {
+let findAndToggleChecked = function(id) {
   let newItem= this.findById(id);
   newItem.checked = !newItem.checked;
 };
@@ -42,7 +42,9 @@ let findAndDelete = function(id) {
   this.items= this.items.filter(item => item.id !== id);
 }; 
 
-
+let toggleCheckedFilter = function (){
+  this.hideCheckedItems = !this.hideCheckedItems;
+};
 
 export default 
 {
@@ -52,7 +54,8 @@ export default
   addItem,
   findAndToggleChecked,
   findAndUpdateName,
-  findAndDelete
+  findAndDelete,
+  toggleCheckedFilter
 };
 
 
