@@ -56,7 +56,6 @@ const addItemToShoppingList = function (itemName) {
   } catch (error){
     console.log(`Cannot add item: ${error.message}`);
   }
-  
 };
 
 const handleNewItemSubmit = function () {
