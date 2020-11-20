@@ -40,7 +40,9 @@ let findAndUpdateName = (id,newName) => {
 
 let findAndDelete = function(id) {
   this.items= this.items.filter(item => item.id !== id);
-};
+}; 
+
+
 
 export default 
 {
